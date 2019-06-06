@@ -1,0 +1,45 @@
+<body>
+<h1>Anime Shop</h1>
+<h3>Shopping Cart</h3>
+<form #itemsForm="ngForm" (ngSubmit)="addNewItem(itemsForm)">
+
+    <label for="">Product</label>
+    <input type="text" ngModel name="product">
+
+    <label for="">Price</label>
+    <input type="number" ngModel name="price">
+
+    <label for="">Quantity</label>
+    <input type="number" ngModel name="quantity">
+
+    <button>Add</button>
+</form>
+
+<div *ngFor=" let item of items,index as i">
+    <p>Id:{{item.id}}</p>
+    <p>Product:{{item.product}}</p>
+    <p>Price:{{item.price}}</p>
+    <p>Quantity:{{item.quantity}}</p>
+
+    <button (click)="removeAnItem(item.id)">X</button>
+    <button (click)="toggleForm(i)">Edit</button>
+
+
+    <form *ngIf="item.itemUpdated" #updateForm="ngForm" 
+    (ngSubmit)="[updateAnItem(item), toggleForm(i)]">
+        <!-- <label for="">Product</label>
+        <input type="text" [(ngModel)]="item.product" name="product">
+
+        <label for="">Price</label>
+        <input type="number" [(ngModel)]="item.price" name="price"> -->
+
+        <label for="">Quantity</label>
+        <input type="number" [(ngModel)]="item.quantity" name="quantity">
+
+        <button>Save Updated</button>
+
+    </form>
+</div>
+
+    
+</body>

@@ -1,0 +1,30 @@
+body{
+    background-image: url(sailorMoonchibis.jpg);
+    background-position: center;
+    margin: 10px;
+    position: relative;
+    
+}
+h3{
+    color:rgb(111, 211, 211);
+}
+h1{
+  color: rgb(65, 15, 15);  
+}
+
+div{
+    border-radius: 20%;
+    border: 2px solid teal;
+    width:150px ;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+button{
+    width: 50px;
+    margin:5px;
+    background-color: black;
+    color:rgb(80, 39, 39); 
+}
+p{
+  color: brown;  
+}
